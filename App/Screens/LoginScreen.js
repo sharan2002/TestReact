@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     height: 100,
 
     marginBottom: 40,
-    
+
 
   },
 
