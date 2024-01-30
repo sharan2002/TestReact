@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 
 const LoginScreen = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSignIn = () => {
+    if (!email || !password) {
+      setErrorMessage('Please enter your email and password');
+    } else {
+      // Perform sign-in logic here
+      console.log('Login pressed');
+    }
+  };
   return (
     <View style={styles.container}>
 
@@ -117,7 +129,7 @@ const styles = StyleSheet.create({
     height: 100,
 
     marginBottom: 40,
-    borderRadius: 50
+    
 
   },
 
@@ -133,7 +145,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 20,
-    marginHorizontal: 7,
+    marginHorizontal: 15,
     marginTop: 20,
     marginBottom: -40
 
