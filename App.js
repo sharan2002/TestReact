@@ -13,7 +13,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login" screenOptions={{headerTitle:''}}>
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-        
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

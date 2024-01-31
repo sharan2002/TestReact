@@ -1,25 +1,36 @@
 import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const SignUpScreen = ({ navigation }) => {
+const SignUpScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Sign Up Screen</Text>
+      <Image
+        source={{ uri: 'https://imgs.search.brave.com/UrhWBmbCjMsbYxdWZRFm-SHYPwN1JKJUYyJH8nv8eY4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzc3Lzk5LzUw/LzM2MF9GXzc3OTk1/MDY0X3JmT2hITmdI/bkV1N2lHbHd6Wmxq/OGlNUmZoenNYaUhG/LmpwZw' }}
+        style={styles.image}
+      />
+
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder=" 🧑 Name"
+
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="📧 Gmail"
         keyboardType="email-address"
       />
-      
-      <Button
-        title="Go to Forgot Password"
-        onPress={() => navigation.navigate('ForgotPassword')}
+      <TextInput
+        style={styles.input}
+        placeholder="📱 Mobile number"
+        keyboardType="phone-pad"
       />
+
+
+      <TouchableOpacity onPress={() => console.log('Login pressed')} style={styles.loginbutton}>
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </TouchableOpacity>
       <View style={{ marginBottom: 10 }} />
-      <Button
-        title="Go back to Login"
-        onPress={() => navigation.goBack()}
-      />
+
     </View>
   );
 };
@@ -29,27 +40,48 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    padding: 20,
+    backgroundColor: 'white'
   },
   text: {
-    fontSize: 20,
+    fontSize: 30,
     marginBottom: 20,
-    fontWeight:'bold',
-    color:'black'
+    fontWeight: 'bold',
+    color: 'black'
 
   },
-  input:{
-    height: 40,
-    width: '70%',
-    borderColor: 'black',
+  input: {
+    height: 50,
+    width: '100%',
+    color: '#FF8C00',
+    borderColor: '#FF8C00',
     borderWidth: 1,
-    marginBottom: 10,
+    marginBottom: 20,
     paddingHorizontal: 10,
-    marginBottom: 20
-
+    borderRadius: 10,
+    backgroundColor: 'white'
   },
-  button:{
-    marginBottom: 10,
+  loginbutton: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#FF8C00',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 40,
+    borderRadius: 50,
+    alignItems: 'center',
+    marginTop: -130,
+    paddingTop: 100
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 17
   }
 });
 

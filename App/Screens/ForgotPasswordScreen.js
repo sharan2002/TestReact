@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
-const ForgotPasswordScreen = ({ navigation }) => {
+const ForgotPasswordScreen = () => {
   return (
     <View style={styles.container}>
       <Image
@@ -14,7 +14,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
       <Text style={styles.texts}> Enter the email associated with your account and we'll send an email to reset your password. </Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="📧 Email"
         keyboardType="email-address"
       />
       <TouchableOpacity onPress={() => console.log('send email pressed')} style={styles.loginbutton}>
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    marginTop:-150,
-    paddingTop:100
+    marginTop: -150,
+    paddingTop: 100
 
   },
   text: {
@@ -47,15 +47,15 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   input: {
-    height: 40,
+    height: 50,
     width: '85%',
-    borderColor: 'gray',
-    borderWidth: 2,
-    marginBottom: 10,
+    color: '#FF8C00',
+    borderColor: '#FF8C00',
+    borderWidth: 1,
+    marginBottom: 20,
     paddingHorizontal: 10,
-    alignContent: 'center',
-    alignItems: 'center',
     borderRadius: 10,
+    backgroundColor: 'white'
 
   },
   texts: {
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     borderRadius: 50,
     alignItems: 'center',
-    marginTop:-150,
-    paddingTop:100
+    marginTop: -150,
+    paddingTop: 100
   }
 
 });
