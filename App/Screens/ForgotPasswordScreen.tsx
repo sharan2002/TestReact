@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, Image, ImageStyle, TextStyle } from 'react-native';
+import { View, Text, TextInput,TouchableOpacity, Image, ImageStyle, TextStyle } from 'react-native';
 import {commonStyles} from '../styles/styles'
 const ForgotPasswordScreen:React.FC = () => {
   return (

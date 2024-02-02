@@ -7,7 +7,7 @@ import SignUpScreen from './App/Screens/SignUpScreen';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" screenOptions={{headerTitle:''}}>
