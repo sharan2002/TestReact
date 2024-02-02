@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import {commonStyles} from '../styles/styles'
 
+interface Props {
+  navigation: {
+    navigate: (route: string) => void;
+  };
+}
 
-const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+const LoginScreen:React.FC<Props> = ({ navigation }) => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleSignIn = () => {
     if (!email || !password) {

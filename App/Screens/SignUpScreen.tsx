@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import { commonStyles } from '../styles/styles';
-const SignUpScreen = () => {
+
+const SignUpScreen: React.FC = () => {
   return (
     <View style={commonStyles.container}>
       <Image
@@ -34,7 +35,4 @@ const SignUpScreen = () => {
     </View>
   );
 };
-
-
-
 export default SignUpScreen;

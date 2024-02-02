@@ -1,6 +1,25 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,ViewStyle,TextStyle, ImageStyle } from 'react-native';
 
-export const commonStyles = StyleSheet.create({
+interface CommonStyles {
+  container: ViewStyle;
+  title: TextStyle;
+  input: TextStyle;
+  button: ViewStyle;
+  buttonText: TextStyle;
+  link: TextStyle;
+  image: ImageStyle;
+  imageContainer: ViewStyle;
+  loginbutton: ViewStyle;
+  text: TextStyle;
+  texts: TextStyle;
+  forgotPassword: TextStyle;
+  signUp: TextStyle;
+  additionalText: TextStyle;
+  sign: TextStyle;
+  imag: ImageStyle;
+  error: TextStyle;
+}
+export const commonStyles = StyleSheet.create<CommonStyles>({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -83,26 +102,8 @@ export const commonStyles = StyleSheet.create({
   },
   
   
-  input: {
-    height: 50,
-    width: '100%',
-    color: '#FF8C00',
-    borderColor: '#FF8C00',
-    borderWidth: 1,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    backgroundColor: 'white'
-  },
-  loginbutton: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#FF8C00',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    marginTop: 10,
-  },
+  
+  
   forgotPassword: {
     color: '#FF8C00',
     fontWeight: 'bold',
@@ -137,17 +138,6 @@ export const commonStyles = StyleSheet.create({
     marginBottom: 10,
     borderColor:'yellow'
   },
-  
-  text: {
-    fontSize: 30,
-    marginBottom: 20,
-    fontWeight: 'bold',
-    color: 'black'
-
-  },
-  
-  
-  
   
 });
 
