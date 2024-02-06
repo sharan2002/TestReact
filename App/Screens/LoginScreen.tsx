@@ -1,27 +1,34 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import {commonStyles} from '../styles/styles'
-
+import { authenticateUser } from '../services/authentication';
 interface Props {
   navigation: {
-    navigate: (route: string) => void;
+    navigate: (route: string,  params?: any) => void;
   };
 }
 
-const LoginScreen:React.FC<Props> = ({ navigation }) => {
+const LoginScreen: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     if (!email || !password) {
       setErrorMessage('Please enter your email and password');
-    } else {      
-      console.log('Login pressed');
+    } else {
+      try {
+        const userData = await authenticateUser(email, password);
+        navigation.navigate('UserScreen', { userData });
+      } catch (error:any) {
+        console.error(error.message);
+        setErrorMessage('Authentication failed. Please check your credentials.');
+      }
     }
   };
   const inputBorderColor = errorMessage ? 'red' : '#FF8C00' ;
   const inputBorderWidth = errorMessage ? 2 : 1; 
+
 
 
   return (
