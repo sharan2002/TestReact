@@ -1,3 +1,4 @@
+//SignUpScreen.tsx
 import React from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import { commonStyles } from '../styles/styles';

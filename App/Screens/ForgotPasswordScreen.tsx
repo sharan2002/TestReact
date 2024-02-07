@@ -1,3 +1,4 @@
+//ForgotPasswordScreen.tsx
 import React from 'react';
 import { View, Text, TextInput,TouchableOpacity, Image, ImageStyle, TextStyle } from 'react-native';
 import {commonStyles} from '../styles/styles'
